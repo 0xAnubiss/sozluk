@@ -58,7 +58,9 @@ export function ProfileOverview({ profile, profileActions, children }: ProfileOv
           </div>
           <p className="profile-bio">{profile.bio}</p>
           <div className="profile-actions">
-            {profileActions ?? (
+            {profileActions ? (
+              <div className="profile-action-group">{profileActions}</div>
+            ) : (
               <Link href="/profile/me" className="primary-button">
                 Profili düzenle
               </Link>

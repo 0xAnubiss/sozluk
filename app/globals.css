@@ -1029,8 +1029,16 @@ svg {
 .profile-upload-button input {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   cursor: pointer;
+}
+
+.profile-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .profile-edit-form {
@@ -1518,5 +1526,19 @@ svg {
 
   .profile-actions {
     justify-content: center;
+    width: 100%;
+  }
+
+  .profile-action-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100%, 280px);
+    gap: 10px;
+  }
+
+  .profile-action-group .primary-button,
+  .profile-action-group .ghost-button,
+  .profile-actions > .ghost-button {
+    width: 100%;
   }
 }
