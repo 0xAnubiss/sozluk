@@ -30,19 +30,34 @@ export function ProfileOverview({ profile, profileActions, children }: ProfileOv
   return (
     <div className="page-shell">
       <section className="profile-hero">
-        <div className="profile-portrait">
-          {profile.avatarUrl ? (
-            <Image
-              src={profile.avatarUrl}
-              alt={`${profile.name} profil resmi`}
-              width={420}
-              height={320}
-              className="profile-image"
-              unoptimized
-            />
-          ) : (
-            <div className="portrait-initials">{initials(profile.name)}</div>
-          )}
+        <div className="profile-visual-stack">
+          <div className="profile-portrait">
+            {profile.avatarUrl ? (
+              <Image
+                src={profile.avatarUrl}
+                alt={`${profile.name} profil resmi`}
+                width={420}
+                height={320}
+                className="profile-image"
+                unoptimized
+              />
+            ) : (
+              <div className="portrait-initials">{initials(profile.name)}</div>
+            )}
+          </div>
+
+          <div className="profile-actions profile-actions-mobile">
+            {profileActions ? (
+              <div className="profile-action-group">{profileActions}</div>
+            ) : (
+              <Link href="/profile/me" className="primary-button">
+                Profili düzenle
+              </Link>
+            )}
+            <button type="button" className="ghost-button">
+              Katkıları paylaş
+            </button>
+          </div>
         </div>
 
         <div className="profile-copy">
@@ -57,7 +72,7 @@ export function ProfileOverview({ profile, profileActions, children }: ProfileOv
             ))}
           </div>
           <p className="profile-bio">{profile.bio}</p>
-          <div className="profile-actions">
+          <div className="profile-actions profile-actions-desktop">
             {profileActions ? (
               <div className="profile-action-group">{profileActions}</div>
             ) : (
@@ -69,8 +84,9 @@ export function ProfileOverview({ profile, profileActions, children }: ProfileOv
               Katkıları paylaş
             </button>
           </div>
-          {children}
         </div>
+
+        {children ? <div className="profile-extra">{children}</div> : null}
       </section>
 
       <section className="stats-grid">

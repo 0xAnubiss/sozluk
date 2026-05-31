@@ -1020,6 +1020,21 @@ svg {
   font-weight: 800;
 }
 
+.profile-visual-stack {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.profile-actions-mobile {
+  display: none;
+}
+
+.profile-extra {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
 .profile-upload-button {
   position: relative;
   overflow: hidden;
@@ -1514,12 +1529,13 @@ svg {
   }
 
   .profile-portrait {
-    width: 118px;
-    min-height: 118px;
-    justify-self: center;
+    width: 104px;
+    min-height: 104px;
   }
 
   .profile-hero {
+    grid-template-columns: 112px minmax(0, 1fr);
+    align-items: start;
     gap: 16px;
     padding: 18px 14px;
     border: 1px solid var(--surface-line);
@@ -1527,11 +1543,17 @@ svg {
     background: var(--surface);
   }
 
+  .profile-visual-stack {
+    justify-self: start;
+    width: 112px;
+    gap: 10px;
+  }
+
   .profile-copy {
     width: 100%;
     min-width: 0;
-    text-align: center;
-    justify-items: center;
+    text-align: left;
+    justify-items: start;
     gap: 10px;
   }
 
@@ -1543,14 +1565,14 @@ svg {
 
   .profile-role,
   .profile-bio {
-    max-width: 34ch;
+    max-width: 100%;
   }
 
   .profile-language-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     width: 100%;
-    max-width: 330px;
+    max-width: 100%;
     gap: 8px;
   }
 
@@ -1561,12 +1583,15 @@ svg {
     text-overflow: ellipsis;
   }
 
-  .profile-actions {
+  .profile-actions-desktop {
+    display: none;
+  }
+
+  .profile-actions-mobile {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
+    justify-content: stretch;
     width: 100%;
-    max-width: 280px;
     gap: 10px;
   }
 
@@ -1574,12 +1599,20 @@ svg {
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
-    gap: 10px;
+    gap: 8px;
   }
 
   .profile-action-group .primary-button,
   .profile-action-group .ghost-button,
-  .profile-actions > .ghost-button {
+  .profile-actions-mobile > .ghost-button {
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: 0.82rem;
+  }
+
+  .profile-action-group .primary-button,
+  .profile-action-group .ghost-button,
+  .profile-actions-mobile > .ghost-button {
     width: 100%;
   }
 
