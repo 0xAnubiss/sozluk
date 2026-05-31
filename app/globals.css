@@ -1178,7 +1178,6 @@ svg {
 }
 
 @media (max-width: 920px) {
-  .topbar-inner,
   .dictionary-workspace,
   .entry-layout,
   .contribution-layout,
@@ -1186,6 +1185,11 @@ svg {
   .stats-grid,
   .site-footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .topbar-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
   }
 
   .topbar-nav,
@@ -1239,6 +1243,140 @@ svg {
   .site-footer-inner {
     display: flex;
     flex-direction: column;
+  }
+
+  .page-shell,
+  .reverso-home {
+    padding-top: 20px;
+  }
+
+  .topbar-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand tools"
+      "nav nav"
+      "search search";
+    align-items: center;
+    gap: 10px 12px;
+    min-height: 0;
+    padding: 10px 0;
+  }
+
+  .brand-wordmark {
+    grid-area: brand;
+    font-size: 1.45rem;
+  }
+
+  .topbar-nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    justify-content: center;
+    min-height: 34px;
+    padding: 8px 6px;
+    border: 1px solid var(--surface-line);
+    border-radius: 6px;
+    background: var(--surface);
+    font-size: 0.9rem;
+  }
+
+  .nav-link.is-active {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+  }
+
+  .topbar-tools {
+    display: contents;
+  }
+
+  .topbar-search {
+    grid-area: search;
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .header-action,
+  .header-user {
+    grid-area: tools;
+    justify-self: end;
+  }
+
+  .topbar-account {
+    display: none;
+  }
+
+  .header-action {
+    min-height: 38px;
+    padding: 0 12px;
+  }
+
+  .lookup-panel {
+    margin: 12px auto 22px;
+    padding: 14px;
+  }
+
+  .lookup-tabs {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr);
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+
+  .lookup-tabs button {
+    min-height: 42px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    line-height: 1.15;
+  }
+
+  .lookup-tabs .swap-button {
+    width: 40px;
+    min-width: 40px;
+  }
+
+  .lookup-search {
+    gap: 10px;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .lookup-search svg {
+    align-self: flex-start;
+    margin: 4px 0 -4px;
+  }
+
+  .lookup-search input {
+    width: 100%;
+    min-height: 44px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .lookup-search .primary-button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .quick-terms {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .quick-terms button {
+    min-height: 34px;
+    padding: 0 9px;
+    border-radius: 8px;
+    font-size: 0.86rem;
   }
 
   .translation-meta {
