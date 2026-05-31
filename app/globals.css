@@ -1245,6 +1245,41 @@ svg {
     flex-direction: column;
   }
 
+  .site-footer-inner {
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0;
+    text-align: center;
+  }
+
+  .footer-brand {
+    display: grid;
+    justify-items: center;
+    max-width: 100%;
+  }
+
+  .footer-brand p {
+    max-width: 34ch;
+    margin: 8px 0;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .footer-column {
+    align-items: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+    width: 100%;
+  }
+
   .page-shell,
   .reverso-home {
     padding-top: 20px;
