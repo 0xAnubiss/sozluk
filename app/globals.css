@@ -1349,8 +1349,7 @@ svg {
   }
 
   .lookup-search svg {
-    align-self: flex-start;
-    margin: 4px 0 -4px;
+    display: none;
   }
 
   .lookup-search input {
