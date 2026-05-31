@@ -1,6 +1,7 @@
 "use client";
 
 import { startTransition, useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { slugify } from "@/lib/local-dictionary-store";
 
@@ -79,7 +80,7 @@ export function ContributionComposer() {
     }
   }, [searchParams]);
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsPending(true);
     setSubmitState({ message: "", status: "idle" });

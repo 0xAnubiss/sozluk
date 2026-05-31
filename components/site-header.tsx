@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { LogInIcon, SearchIcon, UserIcon } from "@/components/ui-icons";
 
 type SessionUser = {
@@ -42,7 +43,7 @@ export function SiteHeader() {
     };
   }, []);
 
-  function submitSearch(event: React.FormEvent<HTMLFormElement>) {
+  function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const normalizedQuery = query.trim();
     if (!normalizedQuery) {

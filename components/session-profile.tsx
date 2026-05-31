@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import type { FormEvent } from "react";
 import { ProfileOverview } from "@/components/profile-overview";
 import type { ContributorProfile } from "@/lib/types";
 
@@ -94,7 +95,7 @@ export function SessionProfile() {
     reader.readAsDataURL(file);
   }
 
-  function saveProfile(event: React.FormEvent<HTMLFormElement>) {
+  function saveProfile(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!user || !draft.name.trim()) {

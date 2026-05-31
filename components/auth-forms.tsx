@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import type { FormEvent } from "react";
 
 type StoredUser = {
   name: string;
@@ -68,7 +69,7 @@ export function RegisterForm() {
     reader.readAsDataURL(file);
   }
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
+  function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const user: StoredUser = {
       name: form.name.trim(),
@@ -147,7 +148,7 @@ export function LoginForm() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
+  function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const users = readUsers();
     const user = users.find((item) => item.email === email.trim().toLocaleLowerCase("tr") && item.password === password);
