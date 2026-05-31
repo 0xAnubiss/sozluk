@@ -1380,16 +1380,53 @@ svg {
   }
 
   .translation-meta {
+    order: 2;
     width: 100%;
     align-self: stretch;
-    align-items: stretch;
+    align-items: center;
     min-width: 0;
     flex-basis: auto;
-    gap: 10px;
+    gap: 7px;
   }
 
   .translation-meta .vote-panel {
+    order: 1;
     justify-content: center;
+    transform: none;
+  }
+
+  .translation-main {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .translation-card {
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .translation-definition,
+  .source-definition {
+    margin: 6px 0 0;
+    line-height: 1.45;
+  }
+
+  .phonetic-line {
+    margin: 6px 0;
+  }
+
+  .translation-tags {
+    order: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    width: 100%;
+  }
+
+  .translation-tags span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .translation-meta span,
@@ -1407,8 +1444,10 @@ svg {
   }
 
   .contribute-link-top {
-    justify-self: stretch;
-    align-self: flex-start;
+    order: 2;
+    align-self: center;
+    min-width: min(180px, 100%);
+    margin-top: 0;
   }
 
   .form-grid {
