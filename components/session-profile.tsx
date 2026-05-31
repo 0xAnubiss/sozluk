@@ -23,11 +23,21 @@ function splitLanguages(value?: string) {
 
 export function SessionProfile() {
   const [user, setUser] = useState<SessionUser | null>(null);
+  const [draft, setDraft] = useState({ name: "", profession: "", languages: "" });
+  const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     try {
-      setUser(JSON.parse(localStorage.getItem(SESSION_KEY) ?? "null") as SessionUser | null);
+      const storedUser = JSON.parse(localStorage.getItem(SESSION_KEY) ?? "null") as SessionUser | null;
+      setUser(storedUser);
+      if (storedUser) {
+        setDraft({
+          name: storedUser.name ?? "",
+          profession: storedUser.profession ?? "",
+          languages: storedUser.languages ?? ""
+        });
+      }
     } catch {
       setUser(null);
     }
@@ -84,6 +94,27 @@ export function SessionProfile() {
     reader.readAsDataURL(file);
   }
 
+  function saveProfile(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (!user || !draft.name.trim()) {
+      return;
+    }
+
+    const nextUser = {
+      ...user,
+      name: draft.name.trim(),
+      profession: draft.profession.trim(),
+      languages: draft.languages.trim()
+    };
+
+    localStorage.setItem(SESSION_KEY, JSON.stringify(nextUser));
+    window.dispatchEvent(new Event("kalem-auth-change"));
+    setUser(nextUser);
+    setIsEditing(false);
+    setMessage("Profil bilgileri güncellendi.");
+  }
+
   if (!profile) {
     return (
       <div className="page-shell">
@@ -100,12 +131,41 @@ export function SessionProfile() {
     <ProfileOverview
       profile={profile}
       profileActions={
-        <label className="primary-button profile-upload-button">
-          Profil resmi yükle
-          <input type="file" accept="image/*" onChange={(event) => updateAvatar(event.target.files?.[0])} />
-        </label>
+        <>
+          <button type="button" className="primary-button" onClick={() => setIsEditing((current) => !current)}>
+            Profili düzenle
+          </button>
+          <label className="ghost-button profile-upload-button">
+            Profil resmi yükle
+            <input type="file" accept="image/*" onChange={(event) => updateAvatar(event.target.files?.[0])} />
+          </label>
+        </>
       }
     >
+      {isEditing ? (
+        <form className="profile-edit-form" onSubmit={saveProfile}>
+          <label className="field">
+            <span>Ad soyad</span>
+            <input value={draft.name} onChange={(event) => setDraft((current) => ({ ...current, name: event.target.value }))} />
+          </label>
+          <label className="field">
+            <span>Meslek</span>
+            <input value={draft.profession} onChange={(event) => setDraft((current) => ({ ...current, profession: event.target.value }))} />
+          </label>
+          <label className="field field-wide">
+            <span>Diller</span>
+            <input value={draft.languages} onChange={(event) => setDraft((current) => ({ ...current, languages: event.target.value }))} />
+          </label>
+          <div className="form-actions">
+            <button type="button" className="ghost-button" onClick={() => setIsEditing(false)}>
+              Vazgeç
+            </button>
+            <button type="submit" className="primary-button">
+              Kaydet
+            </button>
+          </div>
+        </form>
+      ) : null}
       {message ? <p className="form-feedback success">{message}</p> : null}
     </ProfileOverview>
   );

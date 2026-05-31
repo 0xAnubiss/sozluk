@@ -1033,6 +1033,18 @@ svg {
   cursor: pointer;
 }
 
+.profile-edit-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
+  padding: 16px;
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
 .stats-grid {
   grid-template-columns: minmax(0, 1fr) 220px 220px;
   margin-top: 24px;
@@ -1267,6 +1279,10 @@ svg {
 
   .field-wide {
     grid-column: auto;
+  }
+
+  .profile-edit-form {
+    grid-template-columns: 1fr;
   }
 
   .contribution-main .form-card:first-child {

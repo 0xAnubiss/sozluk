@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ContributorProfile } from "@/lib/types";
 import type { ReactNode } from "react";
 import { GlobeIcon, MedalIcon, ShieldIcon, SparkIcon, TrophyIcon, UsersIcon } from "@/components/ui-icons";
@@ -58,9 +59,9 @@ export function ProfileOverview({ profile, profileActions, children }: ProfileOv
           <p className="profile-bio">{profile.bio}</p>
           <div className="profile-actions">
             {profileActions ?? (
-              <button type="button" className="primary-button">
+              <Link href="/profile/me" className="primary-button">
                 Profili düzenle
-              </button>
+              </Link>
             )}
             <button type="button" className="ghost-button">
               Katkıları paylaş
