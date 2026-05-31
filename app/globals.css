@@ -680,8 +680,11 @@ svg {
 .entry-meta-line {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin: 12px 0 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 14px auto 0;
 }
 
 .entry-title-row {
@@ -1266,6 +1269,29 @@ svg {
   .site-footer-inner {
     display: flex;
     flex-direction: column;
+  }
+
+  .entry-hero {
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .entry-title-row {
+    justify-content: center;
+  }
+
+  .entry-meta-line {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .entry-meta-line span,
+  .entry-meta-line .level-chip,
+  .entry-meta-line .part-of-speech-tag {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 130px;
   }
 
   .site-footer-inner {

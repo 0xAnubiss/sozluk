@@ -36,14 +36,14 @@ export default async function EntryPage({ params }: EntryPageProps) {
           <div className="entry-title-row">
             <h1>{entry.headword}</h1>
             <SpeakButton text={entry.headword} lang={speechLang} label={`${entry.headword} sesletimini dinle`} />
-            <span className="level-chip">{rankedSenses[0]?.level ?? "A1"}</span>
           </div>
-          <p className="entry-meta-line">
+          <div className="entry-meta-line">
             <span>{entry.pronunciation}</span>
             <span>/ {entry.ipa.replace(/^\[|\]$/g, "")} /</span>
+            <span className="level-chip">{rankedSenses[0]?.level ?? "A1"}</span>
             <span className="part-of-speech-tag">{rankedSenses[0]?.partOfSpeech ?? "ad"}</span>
             <span>{entry.domain}</span>
-          </p>
+          </div>
         </div>
         <Link href="/contribute" className="primary-button">
           Veri ekle
