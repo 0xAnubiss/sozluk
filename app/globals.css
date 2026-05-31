@@ -1514,25 +1514,66 @@ svg {
   }
 
   .profile-portrait {
-    width: 150px;
-    min-height: 150px;
+    width: 118px;
+    min-height: 118px;
     justify-self: center;
   }
 
+  .profile-hero {
+    gap: 16px;
+    padding: 18px 14px;
+    border: 1px solid var(--surface-line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
   .profile-copy {
+    width: 100%;
+    min-width: 0;
     text-align: center;
     justify-items: center;
+    gap: 10px;
+  }
+
+  .profile-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2rem, 12vw, 2.7rem);
+    overflow-wrap: anywhere;
+  }
+
+  .profile-role,
+  .profile-bio {
+    max-width: 34ch;
+  }
+
+  .profile-language-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 330px;
+    gap: 8px;
+  }
+
+  .profile-language-row span {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .profile-actions {
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     width: 100%;
+    max-width: 280px;
+    gap: 10px;
   }
 
   .profile-action-group {
     display: grid;
     grid-template-columns: 1fr;
-    width: min(100%, 280px);
+    width: 100%;
     gap: 10px;
   }
 
@@ -1540,5 +1581,17 @@ svg {
   .profile-action-group .ghost-button,
   .profile-actions > .ghost-button {
     width: 100%;
+  }
+
+  .stats-grid {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .stat-hero-card,
+  .stat-mini-card,
+  .badge-row,
+  .profile-contribution-card {
+    padding: 16px;
   }
 }
