@@ -1,0 +1,167 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum LanguageLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+enum ContributionType {
+  new_sense
+  example
+  translation
+  note
+}
+
+enum ContributionStatus {
+  featured
+  queued
+  review
+}
+
+enum SupportedLanguagePair {
+  tr_fr
+  fr_tr
+}
+
+model Profile {
+  id                 String         @id
+  handle             String         @unique
+  name               String         @unique
+  profession         String
+  bio                String
+  languages          String[]
+  focusAreas         String[]
+  entriesCreated     Int            @default(0)
+  contributionsCount Int            @default(0)
+  votesReceived      Int            @default(0)
+  contributions      Contribution[]
+  senses             Sense[]
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+}
+
+model Entry {
+  id                 String           @id
+  slug               String           @unique
+  headword           String
+  languageLabel      String
+  languagePair       SupportedLanguagePair
+  pronunciation      String
+  ipa                String
+  summary            String
+  domain             String
+  contributionStatus String
+  etymology          String
+  editorialNote      String
+  relatedTerms       EntryRelatedTerm[]
+  synonyms           EntrySynonym[]
+  antonyms           EntryAntonym[]
+  idioms             EntryIdiom[]
+  senses             Sense[]
+  contributions      Contribution[]
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+}
+
+model EntryRelatedTerm {
+  id      Int    @id @default(autoincrement())
+  value   String
+  order   Int
+  entryId String
+  entry   Entry   @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId, order])
+}
+
+model EntrySynonym {
+  id      Int    @id @default(autoincrement())
+  value   String
+  order   Int
+  entryId String
+  entry   Entry   @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId, order])
+}
+
+model EntryAntonym {
+  id      Int    @id @default(autoincrement())
+  value   String
+  order   Int
+  entryId String
+  entry   Entry   @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId, order])
+}
+
+model EntryIdiom {
+  id      Int    @id @default(autoincrement())
+  phrase  String
+  meaning String
+  order   Int
+  entryId String
+  entry   Entry   @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId, order])
+}
+
+model Sense {
+  id                   String       @id
+  order                Int
+  definition           String
+  translatedDefinition String
+  level                LanguageLevel
+  register             String
+  partOfSpeech         String
+  note                 String
+  contributorName      String
+  voteOne              Int          @default(0)
+  voteTwo              Int          @default(0)
+  voteThree            Int          @default(0)
+  entryId              String
+  contributorId        String?
+  entry                Entry        @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  contributor          Profile?     @relation(fields: [contributorId], references: [id], onDelete: SetNull)
+  examples             SenseExample[]
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+
+  @@index([entryId, order])
+}
+
+model SenseExample {
+  id      Int    @id @default(autoincrement())
+  source  String
+  target  String
+  order   Int
+  senseId String
+  sense   Sense   @relation(fields: [senseId], references: [id], onDelete: Cascade)
+
+  @@index([senseId, order])
+}
+
+model Contribution {
+  id         String             @id
+  authorName String
+  type       ContributionType
+  summary    String
+  status     ContributionStatus
+  entryId    String
+  authorId   String?
+  entry      Entry              @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  author     Profile?           @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  createdAt  DateTime           @default(now())
+
+  @@index([entryId, createdAt])
+  @@index([authorId, createdAt])
+}

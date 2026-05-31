@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7ef",
+                        "surface-tint": "#4c56af",
+                        "on-surface-variant": "#454652",
+                        "outline": "#767683",
+                        "primary": "#000666",
+                        "secondary-fixed-dim": "#fabd00",
+                        "on-error": "#ffffff",
+                        "secondary": "#785900",
+                        "tertiary": "#380b00",
+                        "on-primary-fixed": "#000767",
+                        "surface-container": "#efecf5",
+                        "surface-variant": "#e4e1ea",
+                        "background": "#fbf8ff",
+                        "on-primary-fixed-variant": "#343d96",
+                        "on-primary-container": "#8690ee",
+                        "surface-dim": "#dbd9e1",
+                        "tertiary-container": "#5c1800",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f2eff8",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6c5000",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-background": "#1b1b21",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbd0",
+                        "secondary-container": "#fdc003",
+                        "inverse-surface": "#303036",
+                        "primary-fixed": "#e0e0ff",
+                        "secondary-fixed": "#ffdf9e",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-container-highest": "#e4e1ea",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf8ff",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#261a00",
+                        "outline-variant": "#c6c5d4",
+                        "on-tertiary-container": "#e17c5a",
+                        "primary-container": "#1a237e",
+                        "surface-container-low": "#f5f2fb",
+                        "on-surface": "#1b1b21",
+                        "inverse-primary": "#bdc2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "stack-loose": "32px",
+                        "container-max-width": "1024px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-compact": "4px"
+                    },
+                    "fontFamily": {
+                        "body-copy": ["Source Serif 4"],
+                        "display-word-mobile": ["Source Serif 4"],
+                        "display-word": ["Source Serif 4"],
+                        "ui-label-lg": ["Inter"],
+                        "definition-main": ["Source Serif 4"],
+                        "metadata-tag": ["Inter"],
+                        "ui-label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-copy": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-word-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-word": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "ui-label-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "definition-main": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "metadata-tag": ["13px", {"lineHeight": "16px", "fontWeight": "700"}],
+                        "ui-label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-copy selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center max-w-[1024px] mx-auto px-margin-mobile md:px-gutter w-full h-16">
+<h1 class="font-display-word text-display-word-mobile md:text-display-word text-primary dark:text-primary-fixed tracking-tight cursor-pointer">Kale'm Sözlük</h1>
+<nav class="hidden md:flex items-center gap-6 font-ui-label-lg text-ui-label-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">FR-TR</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold" href="#">TR-FR</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-copy p-0 w-32 md:w-48" placeholder="Kitap..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-container-low p-2 rounded-full transition-all" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1024px] mx-auto px-margin-mobile md:px-gutter py-stack-loose">
+<!-- Header Section -->
+<section class="mb-stack-loose">
+<div class="flex flex-wrap items-baseline gap-4 mb-stack-compact">
+<h2 class="font-display-word text-display-word text-on-surface">Kitap</h2>
+<span class="bg-primary-container text-on-primary-container font-metadata-tag text-metadata-tag px-3 py-1 rounded-lg">A1</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-ui-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="volume_up">volume_up</span>
+<span>/kiˈtap/</span>
+</div>
+<span class="text-outline">|</span>
+<span class="italic">isim</span>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Main Content: Definitions -->
+<div class="md:col-span-8 space-y-gutter">
+<!-- Definition 1 (Primary) -->
+<article class="bg-white p-6 border border-outline-variant rounded-lg relative overflow-hidden group hover:shadow-[0_16px_24px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-ui-label-sm uppercase tracking-widest text-primary font-bold">Général</span>
+<h3 class="font-definition-main text-[22px] text-on-surface mt-1">Livre (m)</h3>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex gap-0.5 text-secondary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-[10px] font-ui-label-sm text-outline-variant mt-1">124 votes</span>
+</div>
+</div>
+<div class="space-y-4 mb-6">
+<p class="text-body-copy leading-relaxed">
+                            Assemblage de feuilles de papier écrites ou imprimées, réunies en un volume.
+                        </p>
+<div class="pl-4 border-l-2 border-surface-variant italic text-on-surface-variant">
+<p class="mb-1">"Bu sabah yeni bir kitap okumaya başladım."</p>
+<p class="text-ui-label-sm">"J'ai commencé à lire un nouveau livre ce matin."</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-ui-label-sm bg-surface-container-low px-2 py-1 text-on-surface-variant rounded">Eser</span>
+<span class="text-ui-label-sm bg-surface-container-low px-2 py-1 text-on-surface-variant rounded">Cilt</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="" class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a young academic scholar with glasses, looking directly at the camera with a friendly expression. The lighting is bright and high-key, emphasizing a clean, light-mode aesthetic. The background is a soft, out-of-focus library shelf with books, suggesting deep scholarship and expertise. The overall mood is intelligent and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn9Xl6b9KmFDLlZOX9PcO5IEmDQhSQtHAne4ZfhKHxw0VWR_o2-y5kVvGUdLYTaZgL4oBkKngUbf4d_QDmOfEMDczpM8v2zEw-YYJa79cF-oB7mm3xqCYfAYeheqw7yrytKzGSZ4PVUKTplvjddZmZo7CM6meMzMSTl57N5IqiEx9IDQjsPON3lbNo_2HjzpXO6BIAYW7QhrAzKnEdd8xqi2B06qAKJywMXuOuux1yuLV09IEC_VUfuSh0R0spt9y2R1_FFxhM_ZtJ"/>
+</div>
+<span class="text-ui-label-sm text-on-surface-variant">@akademik_dil</span>
+</div>
+<button class="flex items-center gap-1 text-primary hover:underline font-ui-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span>
+                            Utile
+                        </button>
+</div>
+</article>
+<!-- Definition 2 (Secondary) -->
+<article class="bg-white p-6 border border-outline-variant rounded-lg group hover:shadow-[0_16px_24px_rgba(0,0,0,0.04)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-ui-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Religieux</span>
+<h3 class="font-definition-main text-[20px] text-on-surface mt-1">Écriture (f) sainte</h3>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex gap-0.5 text-secondary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant" data-icon="star">star</span>
+</div>
+</div>
+</div>
+<p class="text-body-copy mb-4">Divinement révélé, texte sacré.</p>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="text-ui-label-sm text-on-surface-variant">@filolog_mert</span>
+</div>
+</div>
+</article>
+<!-- Low Voted / 'More' Section -->
+<details class="group border-t border-outline-variant pt-gutter">
+<summary class="list-none flex items-center justify-between cursor-pointer text-primary font-ui-label-lg">
+<span>Afficher plus de définitions (3)</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-gutter space-y-4 opacity-70">
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded">
+<h4 class="font-bold text-ui-label-sm mb-1">Cahier (m) <span class="font-normal text-outline-variant">(@ogrenci_12)</span></h4>
+<p class="text-ui-label-sm">Usage familier pour un registre ou un carnet de notes.</p>
+<div class="flex gap-0.5 text-secondary-fixed-dim mt-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-[14px] text-outline-variant" data-icon="star">star</span>
+</div>
+</div>
+</div>
+</details>
+</div>
+<!-- Sidebar -->
+<aside class="md:col-span-4 space-y-stack-loose">
+<!-- Etymology -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+<h3 class="text-ui-label-sm font-bold uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="history_edu">history_edu</span>
+                        Étymologie
+                    </h3>
+<p class="text-body-copy text-on-surface-variant">
+                        Emprunté à l'arabe <span class="italic">kitāb</span> (كتاب), dérivé de la racine <span class="italic">k-t-b</span> signifiant « écrire ». 
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<p class="text-ui-label-sm text-on-surface-variant leading-relaxed">
+                            Apparaît dans les textes turcs anciens vers le XIVe siècle en remplacement progressif du terme vieux-turc <span class="italic">bitig</span>.
+                        </p>
+</div>
+</div>
+<!-- Related Words -->
+<div class="p-6 border border-outline-variant rounded-lg">
+<h3 class="text-ui-label-sm font-bold uppercase tracking-widest text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_tree">account_tree</span>
+                        Mots liés
+                    </h3>
+<ul class="space-y-3 font-ui-label-lg text-primary">
+<li><a class="hover:underline" href="#">Kitaplık (Bibliothèque)</a></li>
+<li><a class="hover:underline" href="#">Kitapçı (Libraire)</a></li>
+<li><a class="hover:underline" href="#">Kitabevi (Librairie)</a></li>
+<li><a class="hover:underline" href="#">Kütüphane (Médiathèque)</a></li>
+</ul>
+</div>
+<!-- Contribute Button -->
+<button class="w-full py-4 bg-primary text-white font-ui-label-lg rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Ajouter des données
+                </button>
+<!-- Context Image -->
+<div class="rounded-lg overflow-hidden border border-outline-variant">
+<img alt="" class="w-full aspect-video object-cover" data-alt="A high-contrast, moody editorial photograph of an open vintage book resting on a dark wooden table in a sunlit study. Dust motes dance in a single, sharp beam of morning light that illuminates the fine texture of the cream-colored pages and the elegant Turkish typography. The background features blurred, dark bookshelves filled with leather-bound volumes. The aesthetic is academic, focused, and quiet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ69atVjjGgjwlVv_lWH-tcsLW4zGx3u-RRo-ZPQqI0iGRJlexJZrzJRSFDJ6jF5ZKhRjtnnu6Hd19nQIVXHuxH-wP3ikn_gsMGJ68lAxj-R2wKFV_wRIfD8rYfTA2bWWrKgWM7e0dcoo5A86chH-wynqbsrQNoMwMmUKNUyaWnM6XvnJFH4z8pBeFaYtB8XEH4E6Bg19slg94lMY7ApCTtGDhOCIg-i2sHLy2oY1zEu18BY1QE8UZctqcuAMb2Ti1vz2X_Dkk4JUh"/>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline">
+<div class="max-w-[1024px] mx-auto px-margin-mobile md:px-gutter py-stack-loose flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="max-w-xs">
+<span class="font-display-word text-ui-label-lg font-bold text-on-surface dark:text-inverse-on-surface">Kale'm Sözlük</span>
+<p class="text-body-copy text-on-surface-variant mt-2">© 2024 Kale'm Sözlük — Digital Scholarship &amp; Linguistics Research</p>
+</div>
+<div class="grid grid-cols-2 gap-x-gutter gap-y-4 font-body-copy text-body-copy">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">About Project</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Academic Resources</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Project Statistics</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Contribute</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

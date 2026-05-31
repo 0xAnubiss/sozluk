@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Four:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae7ef",
+                    "surface-tint": "#4c56af",
+                    "on-surface-variant": "#454652",
+                    "outline": "#767683",
+                    "primary": "#000666",
+                    "secondary-fixed-dim": "#fabd00",
+                    "on-error": "#ffffff",
+                    "secondary": "#785900",
+                    "tertiary": "#380b00",
+                    "on-primary-fixed": "#000767",
+                    "surface-container": "#efecf5",
+                    "surface-variant": "#e4e1ea",
+                    "background": "#fbf8ff",
+                    "on-primary-fixed-variant": "#343d96",
+                    "on-primary-container": "#8690ee",
+                    "surface-dim": "#dbd9e1",
+                    "tertiary-container": "#5c1800",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f2eff8",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#6c5000",
+                    "on-tertiary-fixed-variant": "#7b2e12",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-background": "#1b1b21",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbd0",
+                    "secondary-container": "#fdc003",
+                    "inverse-surface": "#303036",
+                    "primary-fixed": "#e0e0ff",
+                    "secondary-fixed": "#ffdf9e",
+                    "on-tertiary-fixed": "#390c00",
+                    "surface-container-highest": "#e4e1ea",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface": "#fbf8ff",
+                    "surface-bright": "#fbf8ff",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#261a00",
+                    "outline-variant": "#c6c5d4",
+                    "on-tertiary-container": "#e17c5a",
+                    "primary-container": "#1a237e",
+                    "surface-container-low": "#f5f2fb",
+                    "on-surface": "#1b1b21",
+                    "inverse-primary": "#bdc2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-loose": "32px",
+                    "container-max-width": "1024px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-compact": "4px"
+            },
+            "fontFamily": {
+                    "body-copy": ["Source Serif Four"],
+                    "display-word-mobile": ["Source Serif Four"],
+                    "display-word": ["Source Serif Four"],
+                    "ui-label-lg": ["Inter"],
+                    "definition-main": ["Source Serif Four"],
+                    "metadata-tag": ["Inter"],
+                    "ui-label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-copy": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-word-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-word": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "ui-label-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "definition-main": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "metadata-tag": ["13px", {"lineHeight": "16px", "fontWeight": "700"}],
+                    "ui-label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf8ff;
+            color: #1b1b21;
+        }
+    </style>
+</head>
+<body class="font-body-copy selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar Component -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline docked full-width top-0 z-50">
+<div class="flex justify-between items-center max-w-[1024px] mx-auto px-margin-mobile md:px-gutter w-full h-16">
+<div class="flex items-center gap-stack-loose">
+<span class="font-display-word text-display-word-mobile md:text-display-word text-primary dark:text-primary-fixed tracking-tight cursor-pointer">Kale'm Sözlük</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">FR-TR</a>
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">TR-FR</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-ui-label-sm font-ui-label-sm w-40" placeholder="Search..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-2 hover:bg-surface-container-low rounded-full transition-all" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1024px] mx-auto px-margin-mobile md:px-gutter py-stack-loose min-h-screen">
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Left Side: Form Content (8 Columns) -->
+<div class="flex-1 space-y-stack-loose">
+<div class="mb-8">
+<h1 class="font-display-word text-display-word text-primary mb-2">Lexicographical Entry</h1>
+<p class="font-body-copy text-on-surface-variant">Contribute to digital scholarship by documenting new linguistic artifacts.</p>
+</div>
+<!-- Form Section: Primary Details -->
+<section class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-lg shadow-sm">
+<h2 class="font-ui-label-lg text-ui-label-lg text-secondary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+                        Core Entry Data
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="col-span-full">
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">WORD NAME / HEADWORD</label>
+<input class="w-full border-2 border-outline-variant focus:border-primary focus:ring-0 rounded-lg p-3 font-display-word text-2xl transition-all" placeholder="e.g., Érudition" type="text"/>
+</div>
+<div>
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">PRONUNCIATION (IPA)</label>
+<div class="flex items-center border border-outline-variant rounded-lg px-3 py-2 bg-surface">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="record_voice_over">record_voice_over</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-copy italic" placeholder="/e.ʁy.di.sjɔ̃/" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">WORD TYPE</label>
+<select class="w-full border border-outline-variant focus:border-primary focus:ring-0 rounded-lg p-2.5 font-ui-label-lg bg-surface">
+<option>Noun (n.)</option>
+<option>Verb (v.)</option>
+<option>Adjective (adj.)</option>
+<option>Adverb (adv.)</option>
+<option>Conjunction (conj.)</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Form Section: Definition & CEFR -->
+<section class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-lg shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-primary-container text-on-primary-fixed-variant font-metadata-tag text-metadata-tag px-3 py-1 rounded-full">DEFINITION #1</span>
+</div>
+<h2 class="font-ui-label-lg text-ui-label-lg text-secondary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+                        Semantic Detail
+                    </h2>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">CEFR DIFFICULTY LEVEL</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 border-2 border-outline-variant font-metadata-tag text-metadata-tag rounded-lg hover:border-primary transition-all">A1</button>
+<button class="px-4 py-2 border-2 border-outline-variant font-metadata-tag text-metadata-tag rounded-lg hover:border-primary transition-all">A2</button>
+<button class="px-4 py-2 border-2 border-outline-variant font-metadata-tag text-metadata-tag rounded-lg hover:border-primary transition-all">B1</button>
+<button class="px-4 py-2 border-2 border-primary bg-primary-container text-white font-metadata-tag text-metadata-tag rounded-lg">C1</button>
+<button class="px-4 py-2 border-2 border-outline-variant font-metadata-tag text-metadata-tag rounded-lg hover:border-primary transition-all">C2</button>
+</div>
+</div>
+<div>
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">REGISTER / CATEGORY</label>
+<select class="w-full border border-outline-variant focus:border-primary focus:ring-0 rounded-lg p-2.5 font-ui-label-lg bg-surface">
+<option>Academic</option>
+<option>Technical / Scientific</option>
+<option>Colloquial / Daily</option>
+<option>Literary</option>
+<option>Archaic</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">DEFINITION (PRIMARY LANGUAGE)</label>
+<textarea class="w-full border border-outline-variant focus:border-primary focus:ring-0 rounded-lg p-3 font-definition-main text-definition-main bg-surface" placeholder="Extensive knowledge acquired chiefly from books..." rows="3"></textarea>
+</div>
+<div>
+<label class="block font-ui-label-sm text-ui-label-sm text-on-surface-variant mb-2">EXAMPLE SENTENCE</label>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary italic">
+<textarea class="w-full bg-transparent border-none focus:ring-0 font-body-copy text-on-surface p-0" placeholder="Sa vaste érudition impressionnait ses collègues." rows="2"></textarea>
+<div class="mt-2 border-t border-outline-variant pt-2">
+<input class="w-full bg-transparent border-none focus:ring-0 font-ui-label-sm text-on-surface-variant p-0" placeholder="Add translation here..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-6 flex items-center gap-2 text-primary font-ui-label-lg hover:underline transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Add Another Definition
+                    </button>
+</section>
+<div class="flex justify-end gap-4 pb-stack-loose">
+<button class="px-8 py-3 font-ui-label-lg text-primary border border-primary rounded-full hover:bg-surface-container-low transition-all">Save Draft</button>
+<button class="px-10 py-3 font-ui-label-lg bg-primary text-white rounded-full hover:shadow-lg transition-all flex items-center gap-2">
+                        Publish Entry
+                        <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Academic Instructions (4 Columns) -->
+<aside class="w-full md:w-[320px] shrink-0">
+<div class="sticky top-20 space-y-6">
+<div class="bg-surface-container border border-outline-variant p-6 rounded-lg">
+<h3 class="font-ui-label-lg text-ui-label-lg text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+                            Guidelines
+                        </h3>
+<ul class="space-y-4 font-ui-label-sm text-on-surface-variant">
+<li class="flex gap-2">
+<span class="font-bold text-primary">01.</span>
+<span>Ensure the headword uses standard orthography without stylistic modifiers.</span>
+</li>
+<li class="flex gap-2">
+<span class="font-bold text-primary">02.</span>
+<span>IPA transcriptions must follow the international standard for the target language.</span>
+</li>
+<li class="flex gap-2">
+<span class="font-bold text-primary">03.</span>
+<span>Definitions should be objective, descriptive, and avoid circular references.</span>
+</li>
+<li class="flex gap-2">
+<span class="font-bold text-primary">04.</span>
+<span>Example sentences must demonstrate the word's typical syntactic role.</span>
+</li>
+</ul>
+</div>
+<div class="relative rounded-lg overflow-hidden h-48 border border-outline-variant">
+<img alt="Academic setting" class="w-full h-full object-cover" data-alt="A clean, minimalist desk in a high-end academic library featuring an open vintage dictionary, a modern fountain pen, and soft natural morning light. The color palette is composed of deep indigo, soft cream, and warm amber accents. The atmosphere is scholarly, quiet, and highly focused, emphasizing digital scholarship and linguistic research." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVpji0aUw3CsaY9P78PhC26y8gle8U6lxwyEhWH6Q4akUVeaAlipg-is37AapiyUD377daoROT9Io4ZyCFVRNWn_FxkBxL0PX6ZzaThjZSXwFrl38Ti0GzbsQMRMDLvhad7xSFwRBN_CM1-Q_QneM-XlnIMDJPDJrArINrGtcaaAFf3Lv07uGSPgpkdP9j2OXCJYSG27OXtZqBfcxWAzPnbL1VACgRH-wdfA5loFh8t40C1YwUmF5TxhoHpkZXxoCn6YUisoF37a8n"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+<p class="text-white font-ui-label-sm text-xs uppercase tracking-widest mb-1">Scholar Tip</p>
+<p class="text-white/90 font-body-copy text-sm italic">"Precision in definition is the primary duty of the lexicographer."</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg border border-outline-variant">
+<h3 class="font-ui-label-lg text-ui-label-lg text-on-surface mb-2">Contribution Progress</h3>
+<div class="w-full bg-outline-variant h-1.5 rounded-full mb-2">
+<div class="bg-secondary h-full rounded-full w-[65%]"></div>
+</div>
+<p class="text-[11px] font-ui-label-sm text-on-surface-variant">Level 4 Contributor (24 entries this month)</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline">
+<div class="max-w-[1024px] mx-auto px-margin-mobile md:px-gutter py-stack-loose flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="space-y-4">
+<span class="font-display-word text-ui-label-lg font-bold text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Kale'm Sözlük</span>
+<p class="font-body-copy text-body-copy text-on-surface-variant max-w-sm">© 2024 Kale'm Sözlük — Digital Scholarship &amp; Linguistics Research. Empowering language learners through precision.</p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-6">
+<div class="flex flex-col gap-2">
+<span class="font-ui-label-sm text-ui-label-sm text-primary uppercase font-bold">Resources</span>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">About Project</a>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Academic Resources</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-ui-label-sm text-ui-label-sm text-primary uppercase font-bold">Community</span>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Contribute</a>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Project Statistics</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-ui-label-sm text-ui-label-sm text-primary uppercase font-bold">Support</span>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

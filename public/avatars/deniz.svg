@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <rect width="160" height="160" fill="#eef7f4"/>
+  <circle cx="80" cy="62" r="34" fill="#1b8a7b"/>
+  <path d="M28 150c8-34 28-52 52-52s44 18 52 52" fill="#0066cc"/>
+  <text x="80" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#fff">DA</text>
+</svg>

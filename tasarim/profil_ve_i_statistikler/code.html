@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+Four:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Source Serif Four', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7ef",
+                        "surface-tint": "#4c56af",
+                        "on-surface-variant": "#454652",
+                        "outline": "#767683",
+                        "primary": "#000666",
+                        "secondary-fixed-dim": "#fabd00",
+                        "on-error": "#ffffff",
+                        "secondary": "#785900",
+                        "tertiary": "#380b00",
+                        "on-primary-fixed": "#000767",
+                        "surface-container": "#efecf5",
+                        "surface-variant": "#e4e1ea",
+                        "background": "#fbf8ff",
+                        "on-primary-fixed-variant": "#343d96",
+                        "on-primary-container": "#8690ee",
+                        "surface-dim": "#dbd9e1",
+                        "tertiary-container": "#5c1800",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f2eff8",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6c5000",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-background": "#1b1b21",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbd0",
+                        "secondary-container": "#fdc003",
+                        "inverse-surface": "#303036",
+                        "primary-fixed": "#e0e0ff",
+                        "secondary-fixed": "#ffdf9e",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-container-highest": "#e4e1ea",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf8ff",
+                        "surface-bright": "#fbf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#261a00",
+                        "outline-variant": "#c6c5d4",
+                        "on-tertiary-container": "#e17c5a",
+                        "primary-container": "#1a237e",
+                        "surface-container-low": "#f5f2fb",
+                        "on-surface": "#1b1b21",
+                        "inverse-primary": "#bdc2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "stack-loose": "32px",
+                        "container-max-width": "1024px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-compact": "4px"
+                    },
+                    "fontFamily": {
+                        "body-copy": ["Source Serif Four"],
+                        "display-word-mobile": ["Source Serif Four"],
+                        "display-word": ["Source Serif Four"],
+                        "ui-label-lg": ["Inter"],
+                        "definition-main": ["Source Serif Four"],
+                        "metadata-tag": ["Inter"],
+                        "ui-label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-copy": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-word-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-word": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "ui-label-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "definition-main": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "metadata-tag": ["13px", {"lineHeight": "16px", "fontWeight": "700"}],
+                        "ui-label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline docked full-width top-0 z-50">
+<div class="flex justify-between items-center max-w-[1024px] mx-auto px-margin-mobile md:px-gutter w-full h-16">
+<div class="font-display-word text-display-word-mobile md:text-display-word text-primary dark:text-primary-fixed tracking-tight cursor-pointer">
+                Kale'm Sözlük
+            </div>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">FR-TR</a>
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">TR-FR</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:outline-none font-ui-label-lg w-64" placeholder="Search dictionary..." type="text"/>
+</div>
+<button class="text-primary dark:text-primary-fixed p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1024px] mx-auto px-margin-mobile md:px-gutter py-stack-loose">
+<!-- Profile Hero Section -->
+<section class="flex flex-col md:flex-row gap-gutter items-start mb-stack-loose">
+<div class="w-full md:w-1/3">
+<div class="aspect-square rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a scholar in a sunlit library. The man has a focused, intelligent expression and is wearing a dark indigo academic coat. The background consists of soft-focus bookshelves filled with leather-bound volumes, creating a sophisticated and authoritative atmosphere of digital scholarship. The lighting is soft, natural, and high-key, aligning with a clean minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9YF5S-xImBJ0VQkoO1QOdfzNIHTcWYmksmOjcvpLY5rUKhe8bHTfW16_R07bQwebm3HFrupZibOAoRrN8fzkG3b5ZEb-Yqxet4iSylZM-JUGgIs9C0ec4xOs45Fi27xvaI6lxpd83BkVUhyCnUaY7RKXawXNHJyltdZtSqx0ZBmCWtDur4u0yGRdpAkT5h_xXcWSgzC2HLockWeXhY5uhI6PvwqIiWXgt2iZE2qsbsXvETTfj_-9EW9wrjpJTUToXbZfcfVHMoeF2"/>
+</div>
+</div>
+<div class="w-full md:w-2/3 flex flex-col justify-center h-full gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="font-display-word text-display-word text-primary">Dr. Alistair Vance</h1>
+<p class="font-ui-label-lg text-on-surface-variant uppercase tracking-widest text-ui-label-sm">Senior Philologist &amp; Research Fellow</p>
+</div>
+<div class="flex flex-wrap gap-2 py-2">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed font-metadata-tag text-metadata-tag rounded-full">FRANCE (C2)</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed font-metadata-tag text-metadata-tag rounded-full">TURKISH (C1)</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed font-metadata-tag text-metadata-tag rounded-full">LATIN (B2)</span>
+</div>
+<p class="font-body-copy text-body-copy max-w-2xl">
+                    Dedicated to the preservation of etymological heritage across the Mediterranean. Currently leading the Digital Lexicography initiative at the Kale'm Institute. Specializing in semantic shifts during the late Ottoman period.
+                </p>
+<div class="flex gap-4 mt-2">
+<button class="bg-primary text-on-primary font-ui-label-lg px-6 py-3 rounded-lg hover:brightness-110 transition-all">Edit Profile</button>
+<button class="border-2 border-primary text-primary font-ui-label-lg px-6 py-3 rounded-lg hover:bg-surface-container-low transition-all">Share Portfolio</button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Statistics -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-loose">
+<!-- Main Rank Card -->
+<div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant p-gutter rounded-xl flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-ui-label-sm text-secondary uppercase mb-2">Academic Standing</p>
+<h2 class="font-display-word text-display-word-mobile text-on-surface">Grand Lexicographer</h2>
+<p class="font-body-copy text-on-surface-variant mt-2">Top 0.5% of contributors globally.</p>
+</div>
+<div class="mt-8 relative z-10">
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[85%] rounded-full"></div>
+</div>
+<p class="font-ui-label-sm text-on-surface-variant mt-2">8,500 / 10,000 XP to next tier</p>
+</div>
+<!-- Subtle background icon -->
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl text-surface-container opacity-20" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<!-- Stats Mini Cards -->
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-xl flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-2" data-icon="menu_book">menu_book</span>
+<p class="font-display-word text-display-word-mobile">1,248</p>
+<p class="font-ui-label-sm text-outline uppercase">Words Created</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-xl flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary-fixed-dim mb-2" data-icon="grade" style="font-variation-settings: 'FILL' 1;">grade</span>
+<p class="font-display-word text-display-word-mobile">4.9k</p>
+<p class="font-ui-label-sm text-outline uppercase">Stars Earned</p>
+</div>
+<!-- Badges Row -->
+<div class="md:col-span-4 bg-surface-container-low p-gutter rounded-xl border border-outline-variant flex flex-col md:flex-row items-center justify-between gap-gutter">
+<div class="flex flex-col gap-1">
+<h3 class="font-ui-label-lg text-primary">Distinguished Badges</h3>
+<p class="font-ui-label-sm text-on-surface-variant">Academic milestones achieved through verified research.</p>
+</div>
+<div class="flex gap-4">
+<div class="group relative cursor-help">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center border-2 border-on-secondary-container shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="history_edu">history_edu</span>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 p-2 bg-inverse-surface text-inverse-on-surface text-ui-label-sm rounded hidden group-hover:block text-center z-20">Etymology Expert: 500+ Roots Tracked</div>
+</div>
+<div class="group relative cursor-help">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center border-2 border-on-primary-container shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="verified">verified</span>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 p-2 bg-inverse-surface text-inverse-on-surface text-ui-label-sm rounded hidden group-hover:block text-center z-20">Peer Reviewer: 100+ Verified Citations</div>
+</div>
+<div class="group relative cursor-help">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center border-2 border-outline shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-outline" data-icon="translate">translate</span>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 p-2 bg-inverse-surface text-inverse-on-surface text-ui-label-sm rounded hidden group-hover:block text-center z-20">Polyglot: Mastering 3+ Languages</div>
+</div>
+<div class="group relative cursor-help">
+<div class="w-14 h-14 rounded-full bg-error-container flex items-center justify-center border-2 border-on-error-container shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-error-container" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 p-2 bg-inverse-surface text-inverse-on-surface text-ui-label-sm rounded hidden group-hover:block text-center z-20">Archivist: 365 Day Streak</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Contributions -->
+<section>
+<div class="flex items-center justify-between mb-gutter">
+<h2 class="font-display-word text-display-word-mobile text-on-surface">Recent Contributions</h2>
+<button class="text-primary font-ui-label-lg flex items-center gap-1 hover:underline">
+                    View All <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Contribution Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-lg hover:shadow-xl hover:shadow-surface-container transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-display-word text-2xl text-primary">Melankoli</h3>
+<p class="font-ui-label-sm text-outline mt-1 italic">n. — from Greek 'melankholia' (black bile)</p>
+</div>
+<span class="px-2 py-1 border border-primary text-primary font-metadata-tag text-[10px] uppercase rounded">A2 Level</span>
+</div>
+<p class="font-body-copy text-body-copy mb-4">A deep, pensive, and long-lasting sadness. In the digital age, often associated with the quiet exhaustion of hyper-connectivity.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-ui-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span> 428
+                            </span>
+<span class="flex items-center gap-1 text-ui-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="comment">comment</span> 12
+                            </span>
+</div>
+<span class="font-ui-label-sm text-outline">Published 2 days ago</span>
+</div>
+</div>
+<!-- Contribution Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-lg hover:shadow-xl hover:shadow-surface-container transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-display-word text-2xl text-primary">Lügat</h3>
+<p class="font-ui-label-sm text-outline mt-1 italic">n. — from Arabic 'lughah' (language, word)</p>
+</div>
+<span class="px-2 py-1 border border-secondary text-secondary font-metadata-tag text-[10px] uppercase rounded">C1 Level</span>
+</div>
+<p class="font-body-copy text-body-copy mb-4">A book containing the words of a language, typically in alphabetical order, with their meanings and usage; a dictionary.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-ui-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span> 1.2k
+                            </span>
+<span class="flex items-center gap-1 text-ui-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="comment">comment</span> 54
+                            </span>
+</div>
+<span class="font-ui-label-sm text-outline">Published 1 week ago</span>
+</div>
+</div>
+<!-- Contribution Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter rounded-lg hover:shadow-xl hover:shadow-surface-container transition-all duration-300">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-display-word text-2xl text-primary">Hissikablelvuku</h3>
+<p class="font-ui-label-sm text-outline mt-1 italic">n. — Ottoman Turkish (premonition)</p>
+</div>
+<span class="px-2 py-1 border border-tertiary text-tertiary font-metadata-tag text-[10px] uppercase rounded">C2 Level</span>
+</div>
+<p class="font-body-copy text-body-copy mb-4">The feeling of knowing something will happen before it occurs; a distinct and heavy sense of premonition.</p>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-ui-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span> 890
+                            </span>
+<span class="flex items-center gap-1 text-ui-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="comment">comment</span> 29
+                            </span>
+</div>
+<span class="font-ui-label-sm text-outline">Published 2 weeks ago</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline full-width">
+<div class="max-w-[1024px] mx-auto px-margin-mobile md:px-gutter py-stack-loose flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4 max-w-xs">
+<div class="font-display-word text-ui-label-lg font-bold text-on-surface dark:text-inverse-on-surface">Kale'm Sözlük</div>
+<p class="font-body-copy text-body-copy text-on-surface-variant">An open-access digital lexicography platform dedicated to the preservation of language across cultures.</p>
+<p class="text-ui-label-sm text-outline">© 2024 Kale'm Sözlük — Digital Scholarship &amp; Linguistics Research</p>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4">
+<div class="flex flex-col gap-3">
+<p class="font-ui-label-sm font-bold uppercase text-primary">Resources</p>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all duration-200" href="#">About Project</a>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all duration-200" href="#">Academic Resources</a>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all duration-200" href="#">Project Statistics</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-ui-label-sm font-bold uppercase text-primary">Community</p>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all duration-200" href="#">Contribute</a>
+<a class="font-body-copy text-body-copy text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed underline decoration-secondary-fixed-dim transition-all duration-200" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
